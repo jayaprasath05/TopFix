@@ -217,25 +217,6 @@ TopFix/
 \---
 
 
-
-\## 👨‍💻 Author
-
-
-
-\*\*Jayaprasath M\*\*
-
-
-
-Computer Science Engineering Student
-
-
-
-Panimalar Engineering College
-
-
-
-\---
-
 \## 📸 Screenshots
 
 
@@ -279,4 +260,26 @@ Panimalar Engineering College
 \### Login Page
 
 !\[Login Page](screenshots/login.png)
+
+
+\---
+
+
+\## 👨‍💻 Author
+
+
+
+\*\*Jayaprasath M\*\*
+
+
+
+Computer Science Engineering Student
+
+
+
+Panimalar Engineering College
+
+
+
+\---
 
