@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TopFix - sales Page</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('sell/servicebackground2.jpg');
+            background-size: cover;
+            filter: grayscale(85%) brightness(0.88) contrast(0.92);
+            z-index: -1;
+            pointer-events: none;
+        }
+        header {
+      background: #fff;
+      color: #000;
+      padding: 8px 20px;
+      font-size: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .main-nav {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-right: 10px;
+      background: white;
+    }
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links > ul > li {
+      margin: 0 15px;
+    }
+
+    .nav-links > ul > li > a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul > li > a:hover {
+      color: #f0c14b;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #f0c14b;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #222;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+      color: #fff !important;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      text-shadow: none !important;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0c14b;
+      color: #000 !important;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .arrow {
+      font-size: 10px;
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+
+    .dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+            .login-button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0c14b 60%, #fffbe6 100%);
+            border: 1.5px solid #f0c14b;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            box-shadow: 0 2px 8px #f0c14b44;
+            transition: background 0.2s, color 0.2s;
+        }
+        .login-button:hover {
+            background: #fffbe6;
+            color: #b38b00;
+        }
+        .container { 
+         max-width: 1100px;
+         margin: 40px auto; background: #fff; 
+         padding: 30px; border-radius: 8px;
+         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            text-align: center; 
+            margin-bottom: 24px; 
+        }
+        .flex { 
+            display: 
+            flex; 
+            gap: 40px; 
+        }
+        .form-section { 
+            flex: 1; 
+        }
+        .products-section { 
+            flex: 2; 
+        }
+        label { 
+            display: block; 
+            margin-top: 16px; 
+        }
+        input, select, textarea { 
+            width: 100%; padding: 8px; 
+            margin-top: 6px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        }
+        button { 
+            margin-top: 20px; 
+            width: 100%; 
+            padding: 12px; 
+            background: #007bff; 
+            color: #fff; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 16px; 
+            cursor: pointer;
+        }
+        button:hover { 
+            background: #0056b3; 
+        }
+        .preview { 
+            margin-top: 10px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+        }
+        .preview img, .preview video { 
+            width: 80px; 
+            height: 80px; 
+            object-fit: cover; 
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+        }
+        .products-list { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+            gap: 24px; 
+            margin-top: 20px; 
+        }
+        .product-card { 
+            background: #fafafa; 
+            border: 1px solid #eee; 
+            border-radius: 8px; 
+            padding: 16px; 
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .product-card img { 
+            width: 100%; 
+            height: 140px; 
+            object-fit: cover; 
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+        }
+        .product-title { 
+            font-weight: bold; 
+            margin: 10px 0 4px 0; 
+        }
+        .product-category { 
+            font-size: 13px; 
+            color: #666; 
+        }
+        .product-price { 
+            color: #007bff; 
+            font-size: 18px; 
+            margin: 8px 0; 
+        }
+        .product-desc { 
+            font-size: 14px; 
+            color: #444; 
+            margin-bottom: 8px; 
+        }
+        #cartModal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+        }
+        #cartModalContent {
+            background: #fff;
+            border-radius: 10px;
+            max-width: 350px;
+            width: 90vw;
+            padding: 24px 16px 16px 16px;
+            position: relative;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+        }
+        #cartModalClose {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        #cartItemsList {
+            max-height: 260px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+        }
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item-title {
+            flex: 1;
+            font-weight: 500;
+        }
+        .cart-item-remove {
+            color: #dc3545;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #cartModalEmpty {
+            text-align: center;
+            color: #888;
+            margin: 24px 0;
+        }
+        #cartModalBuy {
+            width: 100%;
+            padding: 10px 0;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+      margin-top: auto;
+    }
+    </style>
+  <link rel="icon" type="image/x-icon" href="homepage/logo1.webp">
+</head>
+<body>
+     <header>
+    <div class="header-title">
+      Laptop & Desktop Service Company
+    </div>
+  </header>
+
+<nav class="main-nav">
+    <a href="homepage.html" class="logo">
+      <img src="homepage/logo1.webp" alt="Logo">
+      <label style="position: relative; top: -6px;">TopFix</label>
+    </a>
+    <div class="nav-links">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li class="dropdown">
+              <a href="product.html">Products <span class="arrow">&#9662;</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="product.html#laptops">Laptops</a></li>
+                <li><a href="product.html#pcs">PCs</a></li>
+                <li><a href="product.html#mobiles">Mobiles</a></li>
+                <li><a href="product.html#accessories">Accessories</a></li>
+              </ul>
+            </li>
+            <li><a href="sell(1).html">Sales</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <a href="login1.html" class="login-button">Login</a>
+</nav>
+
+    <div class="container">
+        <h2>Marketplace</h2>
+        <div class="flex">
+            <div class="form-section">
+                <form id="sellForm">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="PC">PC</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+
+                    <label for="title">Product Title</label>
+                    <input type="text" id="title" name="title" placeholder="e.g. Dell Inspiron 15" required>
+
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Describe your product" required></textarea>
+
+                    <label for="price">Set Your Price</label>
+                    <div style="display: flex; gap: 8px;">
+                        <select id="currency" name="currency" required style="width: 90px;">
+                            <option value="USD">$ (USD)</option>
+                            <option value="INR">₹ (INR)</option>
+                            <option value="EUR">€ (EUR)</option>
+                            <option value="GBP">£ (GBP)</option>
+                        </select>
+                        <input type="number" id="price" name="price" min="1" step="any" required style="flex:1;">
+                    </div>
+
+                    <label for="frontPhoto">Front Photo</label>
+                    <input type="file" id="frontPhoto" name="frontPhoto" accept="image/*" required>
+                    
+                    <label for="backPhoto">Back Photo</label>
+                    <input type="file" id="backPhoto" name="backPhoto" accept="image/*" required>
+
+                    <label for="video">Product Video (optional)</label>
+                    <input type="file" id="video" name="video" accept="video/*">
+
+                    <div class="preview" id="preview"></div>
+
+                    <button type="submit">Sell Now</button>
+                </form>
+            </div>
+            <div class="products-section">
+                <h3>Products for Sale</h3>
+                <div class="products-list" id="productsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartModal">
+        <div id="cartModalContent">
+            <button id="cartModalClose">&times;</button>
+            <h3 style="margin-top:0; margin-bottom:16px;">🛒 Your Cart</h3>
+            <div id="cartItemsList"></div>
+            <div id="cartModalEmpty" style="display:none;">Cart is empty!</div>
+            <button id="cartModalBuy" style="display:none;">Buy All</button>
+        </div>
+    </div>
+    <script>
+        let photoDataURLs = [];
+        let videoDataURL = '';
+        function updatePreview() {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = '';
+            if (photoDataURLs[0]) {
+                const img1 = document.createElement('img');
+                img1.src = photoDataURLs[0];
+                img1.alt = 'Front Photo';
+                preview.appendChild(img1);
+            }
+            if (photoDataURLs[1]) {
+                const img2 = document.createElement('img');
+                img2.src = photoDataURLs[1];
+                img2.alt = 'Back Photo';
+                preview.appendChild(img2);
+            }
+            if (videoDataURL) {
+                const vid = document.createElement('video');
+                vid.src = videoDataURL;
+                vid.controls = true;
+                preview.appendChild(vid);
+            }
+        }
+        document.getElementById('frontPhoto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                photoDataURLs[0] = evt.target.result;
+                updatePreview();
+            };
+            reader.readAsDataURL(file);
+        });
+        document.getElementById('backPhoto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                photoDataURLs[1] = evt.target.result;
+                updatePreview();
+            };
+            reader.readAsDataURL(file);
+        });
+        document.getElementById('video').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) {
+                videoDataURL = '';
+                updatePreview();
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                videoDataURL = evt.target.result;
+                updatePreview();
+            };
+            reader.readAsDataURL(file);
+        });
+
+        const currencySymbols = {
+            USD: '$',
+            INR: '₹',
+            EUR: '€',
+            GBP: '£'
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+        function addToCart(product) {
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartModal();
+        }
+
+        function renderCartModal() {
+            const cartModal = document.getElementById('cartModal');
+            const cartItemsList = document.getElementById('cartItemsList');
+            const cartModalEmpty = document.getElementById('cartModalEmpty');
+            const cartModalBuy = document.getElementById('cartModalBuy');
+            cartItemsList.innerHTML = '';
+            if (cart.length === 0) {
+                cartModalEmpty.style.display = '';
+                cartModalBuy.style.display = 'none';
+                return;
+            }
+            cartModalEmpty.style.display = 'none';
+            cartModalBuy.style.display = '';
+            cart.forEach((item, idx) => {
+                let symbol = currencySymbols[item.currency] || '$';
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <span class="cart-item-title">${item.title}</span>
+                    <span style="white-space:nowrap;">${symbol}${item.price}</span>
+                    <button class="cart-item-remove" title="Remove" data-idx="${idx}">&times;</button>
+                `;
+                cartItemsList.appendChild(div);
+            });
+            cartItemsList.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.onclick = function(e) {
+                    e.stopPropagation();
+                    removeFromCart(Number(btn.getAttribute('data-idx')));
+                };
+            });
+        }
+        document.getElementById('cartModalClose').onclick = function() {
+            document.getElementById('cartModal').style.display = 'none';
+        };
+        document.getElementById('cartModal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+        document.getElementById('cartModalBuy').onclick = function() {
+            if (cart.length === 0) return;
+            alert('Thank you for your purchase!\n\n' + cart.map((p, i) => `${i+1}. ${p.title}`).join('\n'));
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartModal();
+            document.getElementById('cartModal').style.display = 'none';
+        };
+
+        (function addCartButton() {
+            let cartContainer = document.getElementById('cartContainer');
+            if (!cartContainer) {
+                cartContainer = document.createElement('div');
+                cartContainer.id = 'cartContainer';
+                cartContainer.style.position = 'fixed';
+                cartContainer.style.top = '100px';
+                cartContainer.style.right = '32px';
+                cartContainer.style.zIndex = '1001';
+                cartContainer.style.display = 'flex';
+                cartContainer.style.flexDirection = 'column';
+                cartContainer.style.alignItems = 'flex-end';
+                document.body.appendChild(cartContainer);
+            }
+            const cartBtn = document.createElement('button');
+            cartBtn.id = 'cartBtn';
+            cartBtn.style.background = '#fff';
+            cartBtn.style.border = '1px solid #007bff';
+            cartBtn.style.color = '#007bff';
+            cartBtn.style.borderRadius = '50px';
+            cartBtn.style.width = '110px';
+            cartBtn.style.height = '40px';
+            cartBtn.style.fontSize = '14px';
+            cartBtn.style.cursor = 'pointer';
+            cartBtn.style.display = 'flex';
+            cartBtn.style.alignItems = 'center';
+            cartBtn.style.justifyContent = 'center';
+            cartBtn.style.gap = '4px';
+            cartBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+            cartBtn.innerHTML = `🛒 <span style="margin-left:2px;">Cart (<span id="cartCount">0</span>)</span>`;
+            cartContainer.appendChild(cartBtn);
+            updateCartCount();
+            cartBtn.onclick = function() {
+                renderCartModal();
+                document.getElementById('cartModal').style.display = 'flex';
+            };
+        })();
+
+        function createModal() {
+            let modal = document.getElementById('productModal');
+            if (modal) return modal;
+            modal = document.createElement('div');
+            modal.id = 'productModal';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100vw';
+            modal.style.height = '100vh';
+            modal.style.background = 'rgba(0,0,0,0.4)';
+            modal.style.display = 'none';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = '2000';
+            modal.innerHTML = `
+                <div id="modalContent" style="background:#fff; border-radius:10px; max-width:420px; width:95vw; padding:24px; position:relative; box-shadow:0 4px 32px rgba(0,0,0,0.18);">
+                    <button id="closeModal" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:22px; cursor:pointer;">&times;</button>
+                    <div id="modalBody"></div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.querySelector('#closeModal').onclick = () => { modal.style.display = 'none'; };
+            modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+            return modal;
+        }
+
+        function addProductCard(product) {
+            const productsList = document.getElementById('productsList');
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.style.cursor = 'pointer';
+
+            let frontImg = product.photos && product.photos[0] ? product.photos[0] : 'https://via.placeholder.com/240x140?text=Front+View';
+            let symbol = currencySymbols[product.currency] || '$';
+
+            card.innerHTML = `
+                <img src="${frontImg}" alt="Front View" style="width:100%; height:140px;">
+                <div class="product-title">${product.title}</div>
+                <div class="product-category">${product.category}</div>
+                <div class="product-price">${symbol}${product.price}</div>
+            `;
+
+            card.addEventListener('click', function(e) {
+                const modal = createModal();
+                let backImg = product.photos && product.photos[1] ? product.photos[1] : 'https://via.placeholder.com/240x140?text=Back+View';
+                let videosHTML = '';
+                if (product.videos && product.videos.length) {
+                    videosHTML = product.videos.map(
+                        v => `<video controls width="100%" style="margin-top:8px; border-radius:4px;" class="product-video"><source src="${v}" type="video/mp4">Your browser does not support the video tag.</video>`
+                    ).join('');
+                }
+                modal.querySelector('#modalBody').innerHTML = `
+                    <div style="display:flex; gap:8px; margin-bottom:10px;">
+                        <img src="${frontImg}" alt="Front View" style="width:48%; height:100px;">
+                        <img src="${backImg}" alt="Back View" style="width:48%; height:100px;">
+                    </div>
+                    <div class="product-title" style="font-size:20px;">${product.title}</div>
+                    <div class="product-category">${product.category}</div>
+                    <div class="product-price" style="font-size:18px; margin-bottom:8px;">${symbol}${product.price}</div>
+                    <div class="product-desc" style="margin-bottom:8px;">${product.description || ''}</div>
+                    ${videosHTML}
+                    <div style="display:flex; gap:10px; margin-top:16px;">
+                        <button style="background:#28a745; color:#fff; flex:1; padding:10px 0; border:none; border-radius:4px; font-size:16px; cursor:pointer;" id="modalAddCart">Add to Cart</button>
+                        <button style="background:#ffc107; color:#222; flex:1; padding:10px 0; border:none; border-radius:4px; font-size:16px; cursor:pointer;" id="modalBuyNow">Buy Now</button>
+                    </div>
+                `;
+                modal.style.display = 'flex';
+
+                modal.querySelector('#modalAddCart').onclick = function(ev) {
+                    ev.stopPropagation();
+                    addToCart(product);
+                    modal.style.display = 'none';
+                };
+                modal.querySelector('#modalBuyNow').onclick = function(ev) {
+                    ev.stopPropagation();
+                    alert('Proceeding to buy: ' + product.title);
+                    modal.style.display = 'none';
+                };
+            });
+
+            productsList.prepend(card);
+        }
+
+        const initialProducts = [
+            {
+                category: 'Laptop',
+                title: 'HP Pavilion 14',
+                description: 'Good condition, 8GB RAM, 256GB SSD.',
+                price: 35000,
+                currency: 'INR',
+                photos: [
+                    'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80',
+                    'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80'
+                ],
+                videos: ['https://www.w3schools.com/html/mov_bbb.mp4']
+            },
+            {
+                category: 'Mobile',
+                title: 'iPhone 12',
+                description: 'Blue, 128GB, minor scratches.',
+                price: 500,
+                currency: 'USD',
+                photos: [
+                    'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80',
+                    'https://images.unsplash.com/photo-1512499617640-c2f999098c01?auto=format&fit=crop&w=400&q=80'
+                ],
+                videos: ['https://www.w3schools.com/html/movie.mp4']
+            },
+            {
+                category: 'PC',
+                title: 'Custom Gaming PC',
+                description: 'Ryzen 5, GTX 1660, 16GB RAM.',
+                price: 650,
+                currency: 'EUR',
+                photos: [
+                    'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+                    'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80'
+                ],
+                videos: []
+            },
+            {
+                category: 'Accessories',
+                title: 'Logitech MX Master 3 Mouse',
+                description: 'Wireless, ergonomic, barely used.',
+                price: 55,
+                currency: 'GBP',
+                photos: [
+                    'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80',
+                    'https://images.unsplash.com/photo-1512499617640-c2f999098c01?auto=format&fit=crop&w=400&q=80'
+                ],
+                videos: []
+            }
+        ];
+
+        initialProducts.forEach(addProductCard);
+
+        document.getElementById('sellForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const category = document.getElementById('category').value;
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const price = document.getElementById('price').value;
+            const currency = document.getElementById('currency').value;
+            const photos = [photoDataURLs[0] || '', photoDataURLs[1] || ''];
+            const videos = videoDataURL ? [videoDataURL] : [];
+
+            addProductCard({ category, title, description, price, currency, photos, videos });
+
+            alert('Your product has been added to the marketplace!');
+            this.reset();
+            photoDataURLs = [];
+            videoDataURL = '';
+            updatePreview();
+        });
+    </script>
+     <footer>
+    <p>&copy;  TopFix 2025. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

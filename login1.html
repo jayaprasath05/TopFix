@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TopFix - Sign-In Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #fff;
+            color: #000;
+            padding: 8px 20px;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #000;
+        }
+        .main-nav {
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-right: 10px;
+      background: white;
+    }
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+        .logo label {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav-links ul li a:hover {
+            color: #f0c14b;
+        }
+                .login-button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0c14b 60%, #fffbe6 100%);
+            border: 1.5px solid #f0c14b;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            box-shadow: 0 2px 8px #f0c14b44;
+            transition: background 0.2s, color 0.2s;
+        }
+        .login-button:hover {
+            background: #fffbe6;
+            color: #b38b00;
+        }
+        .logo1 {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 103px;
+        }
+        .container {
+            width: 350px;
+            margin: 60px auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 30px 26px 26px 26px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 18px;
+            color: #111;
+        }
+        label {
+        }
+        .logo1 {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 103px;
+        }
+        .container {
+            width: 350px;
+            margin: 60px auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 30px 26px 26px 26px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 18px;
+            color: #111;
+        }
+        label {
+            font-size: 13px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+            color: #111;
+        }
+        input[type="email"], input[type="password"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #a6a6a6;
+            border-radius: 3px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .signin-btn {
+            width: 100%;
+            background: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 3px;
+            padding: 8px 0;
+            font-size: 15px;
+            font-weight: bold;
+            color: #111;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: background 0.2s;
+        }
+        .signin-btn:hover {
+            background: #f7ca00;
+        }
+        .help {
+            font-size: 13px;
+            color: #0066c0;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+        .help:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            border-top: 1px solid #e6e6e6;
+            margin: 22px 0 18px 0;
+            position: relative;
+            text-align: center;
+        }
+        .divider span {
+            background: #fff;
+            color: #767676;
+            font-size: 12px;
+            padding: 0 8px;
+            position: relative;
+            top: -12px;
+        }
+        .create-account-btn {
+            width: 100%;
+            background: #e7e9ec;
+            border: 1px solid #adb1b8;
+            border-radius: 3px;
+            padding: 8px 0;
+            font-size: 15px;
+            color: #111;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+        .create-account-btn:hover {
+            background: #d7d9dc;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            margin-top: 40px;
+        }
+        @media (max-width: 400px) {
+            .container {
+                width: 98%;
+                padding: 18px 4vw;
+            }
+        }
+    </style>
+  <link rel="icon" type="image/x-icon" href="homepage/logo1.webp">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            Laptop & Desktop Service Company
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <a href="homepage.html" class="logo">
+      <img src="homepage/logo1.webp" alt="Logo">
+      <label>TopFix</label>
+    </a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="sell(1).html">Sales</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    <a href="login1.html" class="login-button">Login</a>
+    </nav>
+
+    <div class="container">
+        <img src="homepage/logo1.webp" alt="Logo" class="logo1">
+        <h1 id="pageTitle">Sign-In</h1>
+        <form id="authForm">
+            <div id="nameField" style="display: none;">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="First and last name">
+            </div>
+
+            <label for="email">Email or mobile phone number</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <div id="confirmPasswordField" style="display: none;">
+                <label for="confirmPassword">Password again</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+
+            <button type="submit" id="submitBtn" class="signin-btn">Sign-In</button>
+        </form>
+        <a href="#" class="help">Forgot your password?</a>
+        <div class="divider"><span id="toggleText">New to laptop service?</span></div>
+        <button type="button" class="create-account-btn" id="toggleModeBtn">Create your laptop service account</button>
+    </div>
+
+    <script>
+        let isSignUpMode = false;
+        
+        const pageTitle = document.getElementById('pageTitle');
+        const submitBtn = document.getElementById('submitBtn');
+        const nameField = document.getElementById('nameField');
+        const confirmPasswordField = document.getElementById('confirmPasswordField');
+        const toggleModeBtn = document.getElementById('toggleModeBtn');
+        const toggleText = document.getElementById('toggleText');
+        const helpLink = document.querySelector('.help');
+        const nameInput = document.getElementById('name');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const authForm = document.getElementById('authForm');
+        
+        function toggleMode() {
+            isSignUpMode = !isSignUpMode;
+            if (isSignUpMode) {
+                pageTitle.textContent = 'Create Account';
+                submitBtn.textContent = 'Create your laptop service account';
+                nameField.style.display = 'block';
+                nameInput.required = true;
+                confirmPasswordField.style.display = 'block';
+                confirmPasswordInput.required = true;
+                helpLink.style.display = 'none';
+                toggleText.textContent = 'Already have an account?';
+                toggleModeBtn.textContent = 'Sign-In';
+                toggleModeBtn.style.background = '#e7e9ec';
+                toggleModeBtn.style.borderColor = '#adb1b8';
+            } else {
+                pageTitle.textContent = 'Sign-In';
+                submitBtn.textContent = 'Sign-In';
+                nameField.style.display = 'none';
+                nameInput.required = false;
+                nameInput.value = '';
+                confirmPasswordField.style.display = 'none';
+                confirmPasswordInput.required = false;
+                confirmPasswordInput.value = '';
+                helpLink.style.display = 'inline-block';
+                toggleText.textContent = 'New to laptop service?';
+                toggleModeBtn.textContent = 'Create your laptop service account';
+                toggleModeBtn.style.background = '';
+                toggleModeBtn.style.borderColor = '';
+            }
+        }
+        
+        toggleModeBtn.addEventListener('click', toggleMode);
+
+        authForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (isSignUpMode) {
+                const name = nameInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+                alert(`Account created successfully for ${name} (${email})!\nYou can now sign in.`);
+                toggleMode(); // Toggle back to sign-in
+            } else {
+                alert(`Welcome back!\nSigning in as ${email}...`);
+                window.location.href = 'homepage.html';
+            }
+        });
+    </script>
+    <div class="footer">
+        &copy; 2024, laptop service Clone. For demonstration purposes only.
+    </div>
+</body>
+</html>

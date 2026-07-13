@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TopFix - Locations Page</title>
+  <style>
+      body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+    }
+
+    header {
+      background: #fff;
+      color: #000;
+      padding: 8px 20px;
+      font-size: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .main-nav {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-right: 10px;
+      background: white;
+    }
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links > ul > li {
+      margin: 0 15px;
+    }
+
+    .nav-links > ul > li > a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul > li > a:hover {
+      color: #f0c14b;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #f0c14b;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #222;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+      color: #fff !important;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      text-shadow: none !important;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0c14b;
+      color: #000 !important;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .arrow {
+      font-size: 10px;
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+
+    .dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+            .login-button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0c14b 60%, #fffbe6 100%);
+            border: 1.5px solid #f0c14b;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            box-shadow: 0 2px 8px #f0c14b44;
+            transition: background 0.2s, color 0.2s;
+        }
+        .login-button:hover {
+            background: #fffbe6;
+            color: #b38b00;
+        }
+
+    .locations-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .location-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 270px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .location-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .location-photo {
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 7px;
+      margin-bottom: 15px;
+      background: #eee;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    .location-info {
+      margin-bottom: 10px;
+    }
+     footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+      margin-top: auto;
+    }
+  </style>
+  <link rel="icon" type="image/x-icon" href="homepage/logo1.webp">
+</head>
+<body><br>
+     <div class="header-title">
+      Laptop & Desktop Service Company
+    </div>
+  </header><br>
+
+  <nav class="main-nav">
+    <a href="homepage.html" class="logo">
+      <img src="homepage/logo1.webp" alt="Logo">
+      <label>TopFix</label>
+    </a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li class="dropdown">
+          <a href="product.html">Products <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="product.html#laptops">Laptops</a></li>
+            <li><a href="product.html#pcs">PCs</a></li>
+            <li><a href="product.html#mobiles">Mobiles</a></li>
+            <li><a href="product.html#accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="sell(1).html">Sales</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <a href="login1.html" class="login-button">Login</a>
+  </nav>
+  <h1>Laptop Service Chennai - Our Locations</h1>
+  <div class="locations-grid">
+    <div class="location-card" onclick="openDirections('12.9822,80.2518')">
+      <img class="location-photo" src="location/annasalai.jpg" alt="Anna Salai">
+      <div class="location-info">
+        <h2>Anna Salai</h2>
+        <p>123, Anna Salai, Chennai, Tamil Nadu 600002</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0422,80.2337')">
+      <img class="location-photo" src="location/t nagar.jpg" alt="T.Nagar">
+      <div class="location-info">
+        <h2>T.Nagar</h2>
+        <p>45, North Usman Road, T.Nagar, Chennai, Tamil Nadu 600017</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('12.9791,80.2214')">
+      <img class="location-photo" src="location/velachery.jpg" alt="Velachery">
+      <div class="location-info">
+        <h2>Velachery</h2>
+        <p>67, Velachery Main Road, Chennai, Tamil Nadu 600042</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0067,80.2570')">
+      <img class="location-photo" src="location/adyar.jpg" alt="Adyar">
+      <div class="location-info">
+        <h2>Adyar</h2>
+        <p>89, L.B. Road, Adyar, Chennai, Tamil Nadu 600020</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('12.9246,80.1272')">
+      <img class="location-photo" src="location/tambaram.jpeg" alt="Tambaram">
+      <div class="location-info">
+        <h2>Tambaram</h2>
+        <p>12, GST Road, Tambaram, Chennai, Tamil Nadu 600045</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0346,80.1587')">
+      <img class="location-photo" src="location/porur.jpg" alt="Porur">
+      <div class="location-info">
+        <h2>Porur</h2>
+        <p>34, Arcot Road, Porur, Chennai, Tamil Nadu 600116</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0108,80.2206')">
+      <img class="location-photo" src="location/guindy.jpg" alt="Guindy">
+      <div class="location-info">
+        <h2>Guindy</h2>
+        <p>56, Mount Road, Guindy, Chennai, Tamil Nadu 600032</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0524,80.2215')">
+      <img class="location-photo" src="location/kodambakam.jpg" alt="Kodambakkam">
+      <div class="location-info">
+        <h2>Kodambakkam</h2>
+        <p>78, Arcot Road, Kodambakkam, Chennai, Tamil Nadu 600024</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.1197,80.2337')">
+      <img class="location-photo" src="location/perambur.jpg" alt="Perambur">
+      <div class="location-info">
+        <h2>Perambur</h2>
+        <p>90, Perambur High Road, Chennai, Tamil Nadu 600011</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('12.9279,80.1197')">
+      <img class="location-photo" src="location/omr.jpg" alt="OMR">
+      <div class="location-info">
+        <h2>OMR</h2>
+        <p>101, Old Mahabalipuram Road, Chennai, Tamil Nadu 600119</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0827,80.2707')">
+      <img class="location-photo" src="location/egmore.jpg" alt="Egmore">
+      <div class="location-info">
+        <h2>Egmore</h2>
+        <p>22, Egmore High Road, Chennai, Tamil Nadu 600008</p>
+      </div>
+    </div>
+    <div class="location-card" onclick="openDirections('13.0480,80.2092')">
+      <img class="location-photo" src="location/ashok nagar.jpg" alt="Ashok Nagar">
+      <div class="location-info">
+        <h2>Ashok Nagar</h2>
+        <p>55, 11th Avenue, Ashok Nagar, Chennai, Tamil Nadu 600083</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openDirections(latlng) {
+      // Opens Google Maps directions from user's location to the service center
+      window.open(`https://www.google.com/maps/dir/?api=1&destination=${latlng}`, '_blank');
+    }
+  </script>
+  <center>
+
+   <footer>
+    <p>&copy;  TopFix 2025. All Rights Reserved.</p>
+  </footer>
+
+</center>
+</body>
+</html>

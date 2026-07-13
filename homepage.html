@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TopFix - homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #fff;
+      color: #000;
+      padding: 8px 20px;
+      font-size: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #000;
+    }
+
+    .main-nav {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      margin-right: 10px;
+      background: white;
+    }
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .logo label {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links > ul > li {
+      margin: 0 15px;
+    }
+
+    .nav-links > ul > li > a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .nav-links > ul > li > a:hover {
+      color: #f0c14b;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      z-index: 1000;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #f0c14b;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #222;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+      color: #fff !important;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      font-weight: bold !important;
+      text-shadow: none !important;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0c14b;
+      color: #000 !important;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .arrow {
+      font-size: 10px;
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+
+    .dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+            .login-button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0c14b 60%, #fffbe6 100%);
+            border: 1.5px solid #f0c14b;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            box-shadow: 0 2px 8px #f0c14b44;
+            transition: background 0.2s, color 0.2s;
+        }
+        .login-button:hover {
+            background: #fffbe6;
+            color: #b38b00;
+        }
+
+    .call-button {
+      padding: 10px 25px;
+      border-radius: 20px;
+      background: #28a745;
+      border: 1px solid #1e7e34;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    .service-highlight {
+      padding: 40px 20px;
+      background: #ffffff;
+      flex-grow: 1;
+    }
+
+    .additional-text {
+      margin-top: 40px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .special-text {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+      margin-top: 30px;
+    }
+
+    .call-wrapper {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px 10px;
+      background-color: #ffffff;
+    }
+
+    .feature-item {
+      width: 250px;
+      text-align: center;
+    }
+
+    .feature-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .feature-item p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .variety-text {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      padding: 20px 0;
+      background-color: #ffffff;
+    }
+
+    .service-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .service-image img {
+      height: 350px;
+      width: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .repair-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .repair-column ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .repair-column ul li {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .repair-column ul li::before {
+      content: "\2022";
+      color: #555;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .choose-us-section {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .choose-us-section h2 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .choose-us-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .choose-item {
+      width: 200px;
+      text-align: center;
+    }
+
+    .choose-item img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .choose-item p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .pricing-section {
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-table {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+
+    .pricing-row:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    .pricing-header {
+      background-color: #a1a1a1;
+      color: white;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+      margin-top: auto;
+    }
+  </style>
+  <link rel="icon" type="image/x-icon" href="homepage/logo1.webp">
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      Laptop & Desktop Service Company
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <a href="homepage.html" class="logo">
+      <img src="homepage/logo1.webp" alt="Logo">
+      <label>TopFix</label>
+    </a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li class="dropdown">
+          <a href="product.html">Products <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="product.html#laptops">Laptops</a></li>
+            <li><a href="product.html#pcs">PCs</a></li>
+            <li><a href="product.html#mobiles">Mobiles</a></li>
+            <li><a href="product.html#accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="sell(1).html">Sales</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <a href="login1.html" class="login-button">Login</a>
+  </nav>
+
+  <section class="service-highlight">
+    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+      <div style="flex: 1; max-width: 600px; padding-left: 100px;">
+        <h2>Doorstep Laptop Service in Chennai</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li style="font-size: 22px; font-weight: 500; color: green;">✔  Doorstep Pick Up & Delivery Service</li><br>
+          <li style="font-size: 22px; font-weight: 500; color: green;">✔ Trained Technicians | No Contract</li><br>
+          <li style="font-size: 22px; font-weight: 500; color: green;">✔ Affordable Pricing | Payment after Service</li><br>
+          <li style="font-size: 22px; font-weight: 500; color: green;">✔ 98% Success Rate & Fast Service</li><br>
+          <li style="font-size: 22px; font-weight: 500; color: green; ">✔ 180 Days Service Warranty</li><br>
+        </ul>
+      </div>
+      <div class="service-image">
+        <img src="homepage/homepagepic.jpg" alt="Service Image">
+      </div>
+    </div>
+
+    <div class="additional-text">
+      Are you looking for Laptop Repair in Chennai?<br>
+      Short on Time? Choose <span style="color: #007bff;">TopFix Services</span> & Get Free Inspection!
+    </div>
+
+    <div class="call-wrapper">
+      <a href="tel:+919999999999" class="call-button">Call Now</a>
+    </div>
+
+    <div class="special-text">Specialized Laptop Repair Services</div>
+
+    <section class="feature-grid">
+      <div class="feature-item"><img src="homepage/icon1.jpg" alt="Chip Level"><p>Chip Level Service</p></div>
+      <div class="feature-item"><img src="homepage/icon2.jpeg" alt="Broken Fix"><p>Broken Laptop Fix</p></div>
+      <div class="feature-item"><img src="homepage/icon3.jpg" alt="Hardware"><p>Hardware Installations</p></div>
+    </section>
+
+    <section class="feature-grid">
+      <div class="feature-item"><img src="homepage/icon4.jpeg" alt="Spares"><p>Laptop Spares</p></div>
+      <div class="feature-item"><img src="homepage/icon5.jpg" alt="Speed Up"><p>Laptop Speed Up</p></div>
+      <div class="feature-item"><img src="homepage/icon6.png" alt="Software"><p>Software Corruption</p></div>
+    </section>
+
+    <div class="variety-text">Variety of Laptop Repairs in Chennai</div>
+    <div class="repair-list">
+    <div class="repair-column">
+      <ul>
+        <li>Laptop Hardware Replacement</li>
+        <li>Laptop Motherboard Service</li>
+        <li>SSD/ Hard Disk Installations</li>
+        <li>Laptop Panel Replacement</li>
+        <li>Laptop Hinges Rework</li>
+        <li>Laptop Software Support</li>
+      </ul>
+    </div>
+    <div class="repair-column">
+      <ul>
+        <li>Motherboard Chip Level Service</li>
+        <li>Laptop SMPS Service</li>
+        <li>Graphics Chip Repair</li>
+        <li>Broken Laptop Repair</li>
+        <li>Processor Upgrade</li>
+        <li>RAM Repair & Upgrades</li>
+      </ul>
+    </div>
+  </div>
+  
+  </section>
+
+  <div class="choose-us-section">
+    <h2>Why You Choose Us?</h2>
+    <div class="choose-us-grid">
+      <div class="choose-item"><img src="homepage/pickup.png" alt="Pickup"><p>Free Pick Up & Delivery</p></div>
+      <div class="choose-item"><img src="homepage/professional.png" alt="Professional"><p>Professional Service</p></div>
+      <div class="choose-item"><img src="homepage/warranty.png" alt="Warranty"><p>Service Warranty</p></div>
+      <div class="choose-item"><img src="homepage/affordable.png" alt="Affordable"><p>Affordable Pricing</p></div>
+    </div>
+  </div>
+
+  <div class="pricing-section">
+    <h2>Laptop Service Cost Details for Chennai</h2>
+    <div class="pricing-table">
+      <div class="pricing-row pricing-header">
+        <div>Service</div>
+        <div>Price (Laptop/Computer)</div>
+      </div>
+      <div class="pricing-row"><div>Chip Level Service</div><div>₹1200 / ₹1000</div></div>
+      <div class="pricing-row"><div>Motherboard Replacement</div><div>₹2500 / ₹2200</div></div>
+      <div class="pricing-row"><div>Screen Replacement</div><div>₹3000 / ₹2800</div></div>
+      <div class="pricing-row"><div>SSD Upgrade</div><div>₹2000 / ₹1800</div></div>
+      <div class="pricing-row"><div>Software Installation</div><div>₹500 / ₹400</div></div>
+      <div class="pricing-row"><div>General Service</div><div>₹800 / ₹700</div></div>
+      <div class="pricing-row"><div>Data Recovery</div><div>₹1500 / ₹1200</div></div>
+      <div class="pricing-row"><div>Virus Removal</div><div>₹600  / ₹500</div></div>
+      <div class="pricing-row"><div>Battery Replacement</div><div>₹100      / ₹800</div></div>        
+      <div class="pricing-row"><div>Keyboard Replacement</div><div>₹700 / ₹600</div></div>
+      <div class="pricing-row"><div>Hinge Repair</div><div>₹900 / ₹800</div></div>
+      <div class="pricing-row"><div>Power Jack Repair</div><div>₹1000 / ₹900</div></div>
+    </div>
+  </div>
+  <section style="padding: 40px 20px; font-size: 28px; text-align: left;"></section>
+    <div style="max-width: 900px; margin: 0 auto;">
+      <p>
+        <strong style="font-size:24px; color:#222;">Laptop Hardware Replacement:</strong>
+        <br><br>
+        We provide robust and reliable laptop hardware replacement services, ensuring your device gets the best quality parts and professional installation. Whether it's a faulty keyboard, screen, battery, or any internal component, our skilled technicians handle replacements with precision and care for long-lasting performance.
+      </p><br>
+      <p>
+        <strong style="font-size:24px; color:#222;">Laptop Motherboard Service:</strong>
+        <br><br>
+                Our expert team specializes in advanced laptop motherboard service, including chip-level repairs and component replacements. We diagnose and fix complex motherboard issues, restoring your laptop’s functionality and extending its lifespan with strong technical expertise.
+      </p><br>
+      <p>
+        <strong style="font-size:24px; color:#222;">Laptop SSD/Hard Disk Installations:</strong>
+        <br><br>
+        Upgrade your laptop’s speed and storage with our SSD and hard disk installation services. We offer seamless installation and data migration, ensuring your files remain safe while you experience a significant boost in performance and reliability.
+      </p><br>
+      <p>
+        <strong style="font-size:24px; color:#222;">Laptop Software Support:</strong>
+        <br><br>
+        Get strong and dependable software support for your laptop. From operating system installations to troubleshooting software issues and virus removal, our team ensures your laptop runs smoothly and securely with up-to-date software solutions.
+      </p><br>
+    </div>
+  </section>
+
+
+<section style="background: #fff; padding: 40px 20px;">
+  <h2 style="text-align:center; font-size: 26px; font-weight: bold; margin-bottom: 30px;">Top Laptop Brands We Support</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 900px; margin: 0 auto;">
+    <img src="homepage/brand-dell1.jpg" alt="Dell" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-hp.png" alt="HP" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-lenovo.png" alt="Lenovo" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-acer.png" alt="Acer" style="width:100px; height:100px; object-fit:contain;">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 900px; margin: 30px auto 0;">
+    <img src="homepage/brand-asus.png" alt="Asus" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-apple.png" alt="Apple" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-msi.jpg" alt="MSI" style="width:100px; height:100px; object-fit:contain;">
+    <img src="homepage/brand-samsung.png" alt="Samsung" style="width:100px; height:100px; object-fit:contain;">
+  </div>
+</section>
+
+
+<section style="background: #f9f9f9; padding: 40px 20px;">
+  <h2 style="text-align:center; font-size: 26px; font-weight: bold; margin-bottom: 30px;">Frequently Asked Questions</h2>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <details style="margin-bottom: 18px;">
+      <summary style="font-size:18px; font-weight:600; cursor:pointer;">Do you provide doorstep laptop service in Chennai?</summary>
+      <p>Yes, we offer doorstep pick-up and delivery for all laptop repair services across Chennai for your convenience.</p>
+    </details>
+    <details style="margin-bottom: 18px;">
+      <summary style="font-size:18px; font-weight:600; cursor:pointer;">What brands of laptops do you repair?</summary>
+      <p>We support all major brands including Dell, HP, Lenovo, Acer, Asus, Apple, MSI, Samsung, and more.</p>
+    </details>
+    <details style="margin-bottom: 18px;">
+      <summary style="font-size:18px; font-weight:600; cursor:pointer;">Is there a warranty on your services?</summary>
+      <p>Yes, we provide up to 180 days service warranty on most repairs and replacements.</p>
+    </details>
+    <details style="margin-bottom: 18px;">
+      <summary style="font-size:18px; font-weight:600; cursor:pointer;">How long does a typical repair take?</summary>
+      <p>Most repairs are completed within 24-48 hours, depending on the issue and parts availability.</p>
+    </details>
+    <details style="margin-bottom: 18px;">
+      <summary style="font-size:18px; font-weight:600; cursor:pointer;">Do you use genuine spare parts?</summary>
+      <p>We use only genuine and high-quality spare parts for all replacements to ensure the best performance and durability.</p>
+    </details>
+  </div>
+</section>
+
+<center>
+  <h2>Laptop Service Center in Chennai</h2>
+
+  <footer>
+    <p>&copy;  TopFix 2025. All Rights Reserved.</p>
+  </footer>
+
+</center>
+</body></details>
+</html>
