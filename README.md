@@ -217,49 +217,25 @@ TopFix/
 \---
 
 
-\## 📸 Screenshots
+## 📸 Screenshots
 
+### Home Page
+![Home Page](screenshots/Home.png)
 
+### Products Page
+![Products Page](screenshots/Products.png)
 
-\### Home Page
+### Service Page
+![Service Page](screenshots/Service.png)
 
-!\[Home Page](screenshots/home.png)
+### Sell Page
+![Sell Page](screenshots/Sell.png)
 
+### Location Page
+![Location Page](screenshots/Location.png)
 
-
-\### Products Page
-
-!\[Products Page](screenshots/products.png)
-
-
-
-\### Service Page
-
-!\[Service Page](screenshots/service.png)
-
-
-
-\### Sell Page
-
-!\[Sell Page](screenshots/sell.png)
-
-
-
-\### Location Page
-
-!\[Location Page](screenshots/location.png)
-
-
-
-\### Contact Page
-
-!\[Contact Page](screenshots/contact.png)
-
-
-
-\### Login Page
-
-!\[Login Page](screenshots/login.png)
+### Contact Page
+![Contact Page](screenshots/Contact.png)
 
 
 \---
